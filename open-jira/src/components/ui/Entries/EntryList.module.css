@@ -1,0 +1,9 @@
+.list {
+  height: 100%;
+}
+
+.list--dragging {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.625rem;
+  border: 1px dashed white;
+}

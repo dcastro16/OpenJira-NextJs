@@ -27,7 +27,7 @@ export const NewEntry = () => {
   };
 
   return (
-    <Box sx={{ marginBottom: 2 }}>
+    <Box sx={{ marginBottom: 1 }}>
       {!isAddingEntry ? (
         <Button
           startIcon={<AddIcon />}
