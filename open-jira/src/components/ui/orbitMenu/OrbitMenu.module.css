@@ -14,7 +14,7 @@
   transform-origin: 9.375rem;
   transition: 0.5s;
   transition-delay: calc(0.1s * var(--i));
-  transform: rotate(0deg) translateX(8.75rem);
+  transform: rotate(0deg) translateX(8.125rem);
 }
 
 .menu li button {
