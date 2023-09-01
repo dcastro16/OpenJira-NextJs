@@ -1,0 +1,62 @@
+.menu {
+  position: relative;
+  width: 18.75rem;
+  height: 18.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transform-origin: 9.375rem;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(8.75rem);
+}
+
+.menu li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.menu__toggle {
+  position: absolute;
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 1.25s;
+}
+
+.menu__image {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.menu.active .menu__toggle {
+  transform: rotate(315deg);
+}
+
+.menu.active li {
+  transform: rotate(calc(360deg / var(--itemCount) * var(--i)));
+}
