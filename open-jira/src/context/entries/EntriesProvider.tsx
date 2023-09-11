@@ -1,4 +1,4 @@
-import { FC, ReactNode, useReducer } from "react";
+import { FC, ReactNode, useEffect, useReducer } from "react";
 import { EntriesContext, entriesReducer } from ".";
 import { Entry, EntryStatus } from "@/interfaces";
 
@@ -9,26 +9,7 @@ export interface EntriesState {
 }
 
 const Entries_INITIAL_STATE: EntriesState = {
-  entries: [
-    {
-      _id: uuidv4(),
-      description: "hola mundo",
-      status: EntryStatus.PENDING,
-      createdAt: Date.now(),
-    },
-    {
-      _id: uuidv4(),
-      description: "hola chavales",
-      status: EntryStatus.IN_PROGRESS,
-      createdAt: Date.now() - 1000000,
-    },
-    {
-      _id: uuidv4(),
-      description: "hola y adios",
-      status: EntryStatus.COMPLETED,
-      createdAt: Date.now() - 100000,
-    },
-  ],
+  entries: [],
 };
 
 interface Props {
@@ -52,6 +33,13 @@ export const EntriesProvider: FC<Props> = ({ children }) => {
   const updateEntry = (entry: Entry) => {
     dispatch({ type: "[Entries] - UpdateEntry", payload: entry });
   };
+
+  useEffect(() => {
+    first
+  
+    
+  }, [])
+  t
 
   return (
     <EntriesContext.Provider
