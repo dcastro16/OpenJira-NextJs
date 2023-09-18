@@ -3,7 +3,8 @@ import { EntriesState } from ".";
 
 type EntriesActionType =
   | { type: "[Entries] - AddEntry"; payload: Entry }
-  | { type: "[Entries] - UpdateEntry"; payload: Entry };
+  | { type: "[Entries] - UpdateEntry"; payload: Entry }
+  | { type: "[Entries] - LoadEntries"; payload: Entry[] };
 
 export const entriesReducer = (
   state: EntriesState,
@@ -25,6 +26,12 @@ export const entriesReducer = (
           }
           return entry;
         }),
+      };
+
+    case "[Entries] - LoadEntries":
+      return {
+        ...state,
+        entries: [...action.payload],
       };
 
     default:

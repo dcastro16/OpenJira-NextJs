@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { UIContext } from "@/context/ui";
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-
-import styles from "./Navbar.module.css";
+import { useContext } from 'react';
+import { UIContext } from '@/context/ui';
+import { AppBar, IconButton, Link, Toolbar, Typography } from '@mui/material';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import NextLink from 'next/link';
 
 export const Navbar = () => {
   const { openSidebar } = useContext(UIContext);
@@ -14,7 +13,9 @@ export const Navbar = () => {
         <IconButton size="large" edge="start" onClick={openSidebar}>
           <MenuOutlinedIcon />
         </IconButton>
-        <Typography variant="h6">OpenJira</Typography>
+        <Link href="/" underline="none" color="white" component={NextLink}>
+          <Typography variant="h6">OpenJira</Typography>
+        </Link>
       </Toolbar>
     </AppBar>
   );

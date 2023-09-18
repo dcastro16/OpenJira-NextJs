@@ -9,25 +9,13 @@ const entrySchema = new Schema({
   status: {
     type: String,
     enum: {
-      values: [
-        EntryStatus.PENDING,
-        EntryStatus.IN_PROGRESS,
-        EntryStatus.COMPLETED,
-      ],
+      values: Object.values(EntryStatus),
       message: "{VALUE} no es un estado permitido.",
     },
     required: true,
+    default: EntryStatus.PENDING,
   },
 });
-
-//   status: {
-//     type: String,
-//     enum: {
-//       values: ["PENDING", "IN_PROGRESS", "COMPLETED"],
-//       message: "{VALUE} no es un estado permitido.",
-//     },
-//     required: true,
-//   },
 
 const EntryModel: Model<IEntry> =
   mongoose.models.Entry || mongoose.model("Entry", entrySchema);

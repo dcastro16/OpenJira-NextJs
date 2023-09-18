@@ -10,7 +10,7 @@ interface SeedEntry {
   createdAt: number;
 }
 
-export const seedData : SeedData = {
+export const seedData: SeedData = {
   entries: [
     {
       description: "hola mundo",
